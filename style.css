@@ -166,14 +166,19 @@ a,button{
     grid-area:main;
     display:grid;
     row-gap: 2em;
+    column-gap: 1rem;
     padding:0;
 
+    grid-template-columns: repeat(auto-fill, minmax(min(100%,25rem), 1fr));
+
 }
-.tablon{
-    display:flex;
-    flex-direction:column;
-    flex-wrap:wrap;
-    border-radius:4px;
+.tablon{    
+    max-height: 45rem;
+    overflow:auto;
+}
+.noticias{
+    max-height: 45rem;
+    overflow:scroll;
 }
 
 .tablon-item{
@@ -185,7 +190,10 @@ a,button{
 .tablon-item:hover{
     height: 16rem;
     transition: height 1s;
+    transition-delay: 1s;
 }
+
+
 .banner{
     display: flex;
     position: relative;
@@ -291,25 +299,12 @@ a,button{
 
 
 @media (min-width: 768px){
-    .grid-container{
-        grid-template:
-        "header header" 100px
-        "nav nav" 50px
-        "anuncios anuncios" 400px
-        "main main" auto
-        "sidebar sidebar" 200px
-        "notas" "notas" auto
-        "footer footer" auto  
-        ;        
-    }
+
 
     /********************************* MAIN **********************************/
 
     
-    .main{
-        grid-template-columns: 1fr 1fr;
-        column-gap: 1em;
-    }
+
     .tablon{
         height: auto;
     }
