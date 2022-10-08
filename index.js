@@ -28,16 +28,34 @@ function changeMenu(x) {
   }
 
   
-//Cuando la pantalla supera los 768 px, el menu se minimiza y la burga cambia
+  //Cuando la pantalla supera los 768 px, el menu se minimiza y la burga cambia
 function hideMenuOnResize() {
   var w = window.outerWidth;
   if (w > 768) {
     hideMenuElements();
   }
 }
-  // MAIN 
+//NOTICIAS FETCH JSON
 
-buttons.forEach(button => {
+function traerCartas(fuente,clase,subclase){
+fetch(`/${fuente}`)
+  .then(response => response.json())
+  .then((data)=>{
+    for(let i in data){
+      document.querySelector(`${clase}`).querySelector(`${subclase}`).innerHTML+=`
+      <article class="card">
+        <img class="photo" src="${data[i].foto}">
+        <div class="titulo">${data[i].titulo}</div>
+        <div class="description">${data[i].descripcion}</div>
+        <div class="seemore"><a href="#">Ver mas</a></div>
+      </article>
+      `
+    }
+  })
+}
+
+// Carousel
+function carousel(){buttons.forEach(button => {
   button.addEventListener("click", () => {
     const offset = button.dataset.carouselButton === "next" ? 1 : -1;
     const slides = button
@@ -55,35 +73,28 @@ buttons.forEach(button => {
       slides.children[newIndex].dataset.active = true;
 
       delete activeSlide.dataset.active;
-    
+      
+    });
   });
-});
-
-document.addEventListener("click", hideMenu);
-
-window.onresize = ()=>{
-  hideMenuOnResize();
 }
-
+// Carousel automatizado
 setInterval(()=>{
   buttonNext.click();
 }, 5000)
 
-//NOTICIAS FETCH JSON
+// MAIN 
 
-fetch("/noticias.json")
-  .then(response => response.json())
-  .then(data=>{
-    for(let i in data){
-      document.querySelector(".noticias").querySelector(".container").innerHTML+=`
-      <article class="card">
-        <img class="photo" src="${data[i].foto}">
-        <div class="titulo">${data[i].titulo}</div>
-        <div class="description">${data[i].descripcion}</div>
-      </article>
-      `
-    }
-  })
+
+carousel();
+
+document.addEventListener("click", hideMenu);
+
+window.onresize = ()=>{hideMenuOnResize();}
+
+traerCartas('noticias.json','.noticias','.container')
+traerCartas('reviews.json','.reviews','.container')
+traerCartas('opiniones.json','.opinion','.container')
+
 
 
 
