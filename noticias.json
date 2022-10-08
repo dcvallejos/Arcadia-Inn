@@ -1,0 +1,27 @@
+[
+    {
+        "id": "1",
+        "foto": "./assets/doom.jpg",
+        "titulo": "DOOM 2016",
+        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
+    },
+    {
+        "id": "2",
+        "foto": "./assets/ELDENRING.jpg",
+        "titulo": "ELDEN RING",
+        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
+    },
+    {
+        "id": "3",
+        "foto": "./assets/farcry.jpg",
+        "titulo": "FAR CRY 6",
+        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
+    },
+    {
+        "id": "4",
+        "foto": "./assets/VALORANT.jpg",
+        "titulo": "VALORANT",
+        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
+    }
+
+]
