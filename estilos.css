@@ -27,6 +27,8 @@ body>*{
     border:1px solid red;
 }
 
+
+
 .logoPag{
     grid-area: logopag;
     background-color: rgb(184, 217, 184);
@@ -56,7 +58,7 @@ body>*{
     width: 160px;
     display: block;
     position:absolute;
-    top: 38%;
+    top: 35%;
     left:1rem;
     z-index: 1;
 }
@@ -129,27 +131,107 @@ body>*{
   
   /*                    MAIN                     */
 
-  .main{
-      grid-area: main;
-      display:grid;
-      grid-template:
-      "carousel" auto
-      "rsApi" auto
-      "noticias" auto
-      "knowhat" auto
-      "reviews" auto
-      "banner" auto
-      "opinion" auto
-      ;
-      justify-items: center;
-      row-gap: 1rem;
+.main{
+    grid-area: main;
+    display:grid;
+    grid-template:
+    "carousel" auto
+    "minis" auto
+    "rsApi" auto
+    "noticias" auto
+    "knowhat" auto
+    "reviews" auto
+    "banner" auto
+    "opinion" auto
+    ;
+    justify-items: center;
+    row-gap: 1rem;
+}
+main>*{
+    border: 1px solid blue;
+    width: 100%;
+    min-height: 10rem;;
+    text-align: center;
+    margin-bottom: auto;
+}
+/* MINIATURAS */
+.minuaturas{
+  grid-area:minis;
+  
+
+}
+.listaMinis{
+    display:flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    gap: 0.1rem;
+    margin-top:0;
+    margin-bottom:0;
+    overflow-y:scroll;
+}
+.miniaturas,.listaMinis{
+    height: 25.5rem;
+}
+
+.mini-card{
+    display:flex;
+    flex-direction: row;
+    border: 3px solid black;
+    background-color:blanchedalmond;
+    position: relative;
+
+}
+
+.imagen-mini{    
+  width: 12rem;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.imagen-mini img{
+    display:block;
+    object-fit: cover;
+    object-position:center;
+    width: 100%;
+    height: 100%;
+}
+.contenido-miniatura{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+  height:8rem;
+  padding-left:1.5rem;   
+  padding-right: 2rem;
+  flex:1;
   }
-  main>*{
-      border: 1px solid blue;
-      width: 100%;
-      text-align: center;
-      margin-bottom: auto;
+
+  .contenido-miniatura div:first-child{
+    color:white;
+    font-weight:bold;
+    background-color:rgb(81, 5, 5);
+    border-radius: 5px;
+    width:1rem;
+    text-align: center;
+    position:absolute;
+    left:2px;
+    bottom: 2px;
+
   }
+  .contenido-miniatura div:nth-child(2){
+    color:red;
+    padding-bottom: 0.5rem;
+  }
+  .contenido-miniatura div:nth-child(3){
+    font-weight:bold;
+  }
+
 
 
 /* CAROUSEL */
@@ -176,6 +258,7 @@ body>*{
     height: 100%;
     object-fit: cover;
     object-position:center;
+    position:relative;
 
 }
 
@@ -221,6 +304,19 @@ body>*{
     margin: 0;
     padding:0;
     list-style:none;
+}
+.subtitle{
+    position:absolute;
+    background: none;
+    border: none;
+    z-index:2;
+    color:white;
+    bottom: 2rem;
+    font-weight:bold;
+    left: 10%;
+    right:10%;
+    height:auto;
+    display:block;
 }
 
 
@@ -321,6 +417,20 @@ body>*{
 .opinion{
     grid-area: opinion;
 }
+.opinion .card{
+    border-top-left-radius: 120px ;
+    border-top-right-radius: 120px ;
+    border-bottom-right-radius: 20px ;
+
+}
+
+.opinion img{
+    border-radius:50%;
+    width: 150px;
+    height: 150px;
+    margin: 1rem auto;
+
+}
 
 /* OPINION SECTOR */
 
@@ -378,12 +488,18 @@ body>*{
     .carousel{
         min-height:26rem;
     }
+    .miniaturas,.listaMinis{
+        height:26rem;
+    }
 
 }
 @media (min-width: 580px){
 
     .carousel{
         min-height:30rem;
+    }
+    .miniaturas,.listaMinis{
+        height:30rem;
     }
 
 }
@@ -408,7 +524,7 @@ body>*{
     }
     .main{
         grid-template:
-        "carousel carousel carousel carousel" auto
+        "carousel carousel carousel minis" auto
         "noticias noticias noticias rsApi" auto
         "knowhat reviews reviews reviews" auto
         "banner banner banner banner" auto
@@ -424,14 +540,31 @@ body>*{
         height:100%;
     }
 
+    .miniaturas,.listaMinis{
+        height:33rem;
 
+    }
 
+    .listaMinis{
+        max-width: 17rem;
 
+      }
 
-    /* .noticias, .reviews, .opinion{
-        max-height: 740px;
-        overflow-y:scroll;
-    } */
+      .imagen-mini{
+        width: 50%
+      }
+      .mini-card{ 
+        width:100%;
+        height:auto;
+ 
+      }
+      .contenido-miniatura{
+        padding:0.7rem;
+        padding:0.7rem;
+      }
+      .contenido-miniatura div{
+        font-size: 0.7rem;
+        }
 
     .footer{
         flex-direction: row;
@@ -453,6 +586,9 @@ body>*{
 @media (min-width: 900px){
     .carousel{
         min-height:35rem;
+    }
+    .miniaturas,.listaMinis{
+        height:35rem;
     }
     .container{
 

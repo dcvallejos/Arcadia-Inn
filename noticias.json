@@ -1,26 +1,37 @@
 [
     {
         "id": "1",
-        "foto": "./assets/doom.jpg",
-        "titulo": "DOOM 2016",
+        "nature": "Noticia",
+        "foto": "./assets/doomlogo.webp",
+        "titulo": "DOOM 2016 | El regreso de un clasicazo",
         "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip Lorem ipsum dolor sit amet, consectetur adip Lorem ipsum dolor sit amet, consectetur adip"
     },
     {
         "id": "2",
+        "nature": "Noticia",
         "foto": "./assets/ELDENRING.jpg",
-        "titulo": "ELDEN RING",
+        "titulo": "ELDEN RING | Bienvenidos a la aventura",
         "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
     },
     {
         "id": "3",
+        "nature": "Noticia",
         "foto": "./assets/farcry.jpg",
-        "titulo": "FAR CRY 6",
+        "titulo": "FAR CRY 6 | REVIEW",
         "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
     },
     {
         "id": "4",
+        "nature": "Noticia",
         "foto": "./assets/VALORANT.jpg",
         "titulo": "VALORANT",
+        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
+    },
+    {
+        "id": "4",
+        "nature": "Noticia",
+        "foto": "./assets/rl.jpg",
+        "titulo": "ROCKET LEAGUE",
         "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
     }
 

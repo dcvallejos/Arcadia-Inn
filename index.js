@@ -2,6 +2,7 @@ const buttons = document.querySelectorAll("[data-carousel-button]")
 const buttonNext = document.querySelector(".next")
 const burga = ".burguer-ico";
 
+
 // El cambiador de la hamburguesa
 function changeMenu(x) {
   x.classList.toggle("change");
@@ -54,14 +55,50 @@ fetch(`/${fuente}`)
   })
 }
 
+function photoCarousel(fuente){
+  fetch(`/${fuente}`).then(response=>response.json()).then(data =>{
+    for(let i=0; i<3; i++){
+      document.querySelector(".data-slides").innerHTML+=      
+      ` <li class="slide">
+          <img src="${data[i].foto}" ${i==0?"data-active":""} alt="Img1">
+          <h1 class="subtitle">${data[i].titulo}</h1>
+        </li>
+      `
+    }
+  })
+
+}
+
+function miniaturas(fuente){
+  fetch(`/${fuente}`).then(response=>response.json()).then(data =>{
+    for(let i in data){
+      document.querySelector(".listaMinis").innerHTML+=      
+      ` <li class="mini-card">
+            <div class="imagen-mini"><img src="${data[i].foto}" alt="Img1"></div>
+          <div class="contenido-miniatura">
+            <div>${data[i].id}</div>
+            <div>${data[i].nature}</div>
+            <div>${data[i].titulo}</div>
+          </div>
+        </li>
+      `
+    }
+  })
+
+}
 // Carousel
 function carousel(){buttons.forEach(button => {
   button.addEventListener("click", () => {
+
+    clearInterval(myInterval)
+    myInterval = setInterval(()=>{buttonNext.click()}, 7000)
+    
     const offset = button.dataset.carouselButton === "next" ? 1 : -1;
     const slides = button
       .closest("[data-carousel]")
       .querySelector("[data-slides]");
-      
+
+
       const activeSlide = slides.querySelector("[data-active]");
       let newIndex = [...slides.children].indexOf(activeSlide) + offset;
       
@@ -77,15 +114,22 @@ function carousel(){buttons.forEach(button => {
     });
   });
 }
+
+
+setTimeout(()=>{buttonNext.click()}, 50)
+var myInterval = setInterval(()=>{buttonNext.click()}, 7000)
+
+
 // Carousel automatizado
-setInterval(()=>{
-  buttonNext.click();
-}, 5000)
+photoCarousel('noticias.json')
+miniaturas('noticias.json')
+
+carousel()
+
 
 // MAIN 
 
 
-carousel();
 
 document.addEventListener("click", hideMenu);
 
