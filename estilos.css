@@ -250,9 +250,13 @@ body>*{
     min-height: 10rem;
     height: 100%;
     justify-content: center;
-    
+
 }
 
+.twitter-timeline{
+    max-height: 940px;
+    overflow: scroll;
+}
 
 
 /* REVIEW AREA */
