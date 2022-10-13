@@ -1,25 +1,26 @@
 [
     {
         "id": "1",
-        "foto": "./assets/doom.jpg",
-        "titulo": "DOOM 2016",
-        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
+        "foto": "../../internal/reviews/fifa23/img/logo.jpg",
+        "titulo": "FIFA 23 | REVIEW",
+        "descripcion" : "El deporte más popular del mundo, en el Juego de Todos",
+        "link" : "../../internal/reviews/fifa23/fifa23.html"
     },
     {
         "id": "2",
-        "foto": "./assets/ELDENRING.jpg",
+        "foto": "./assets/img/ELDENRING.jpg",
         "titulo": "ELDEN RING",
         "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
     },
     {
         "id": "3",
-        "foto": "./assets/farcry.jpg",
+        "foto": "./assets/img/farcry.jpg",
         "titulo": "FAR CRY 6",
         "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
     },
     {
         "id": "4",
-        "foto": "./assets/VALORANT.jpg",
+        "foto": "./assets/img/VALORANT.jpg",
         "titulo": "VALORANT",
         "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
     }

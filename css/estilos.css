@@ -27,7 +27,26 @@ body>*{
     border:1px solid red;
 }
 
+.arcadia-top-background1{
+    position:absolute;
+    left:0;
+    top:0;
+    padding-top: 3rem;
+    float:left;
+    width:25rem;
+    background-color: #79CAF9
+}
+.arcadia-top-background{
+    position:absolute;
+    right:0;
+    top:-14.4rem;
+    width:100vw;
+    height: 40.1rem;
+    background-color: #79CAF9;
+    overflow:hidden;
+    filter: blur(10px);
 
+}
 
 .logoPag{
     grid-area: logopag;
@@ -37,7 +56,7 @@ body>*{
     height: 15rem;
     position: relative;
     overflow: hidden;
-    background-image: url(/assets/sunny-landscape.jpg);
+    background-image: url(/assets/img/sunny-landscape.jpg);
     background-repeat: no-repeat, repeat;
     padding-top: 25rem;
     background-size: 1100px 40rem;
@@ -80,7 +99,7 @@ body>*{
     align-self: start;
     z-index:10;
 }
-
+/* 505.68 height noticias api */
 .burguer-ico {
     grid-area:burguer;
     display: inline-block;
@@ -127,7 +146,8 @@ body>*{
     margin: auto 1rem auto auto ;
 
 }
-  
+
+
   
   /*                    MAIN                     */
 
@@ -137,12 +157,12 @@ body>*{
     grid-template:
     "carousel" auto
     "minis" auto
-    "rsApi" auto
     "noticias" auto
     "knowhat" auto
     "reviews" auto
     "banner" auto
     "opinion" auto
+    "rsApi" auto
     ;
     justify-items: center;
     row-gap: 1rem;
@@ -179,8 +199,10 @@ main>*{
     display:flex;
     flex-direction: row;
     border: 3px solid black;
-    background-color:blanchedalmond;
     position: relative;
+    background-image: url("/assets/img/used-paper-sheet-old-book-page-isolated-white-background_154730-1545.webp");
+    background-position: center;
+    background-size: 120%;
 
 }
 
@@ -343,8 +365,11 @@ main>*{
     width: 100%;
     display:flex;
     flex-direction: column;
-    background-color: papayawhip;
+    /* background-color: papayawhip; */
     box-shadow: 3px 5px 20px grey;
+    background-image: url("/assets/img/used-paper-sheet-old-book-page-isolated-white-background_154730-1545.webp");
+    background-position: center;
+    background-size: 150%;
 
 }
 .photo{
@@ -376,6 +401,7 @@ main>*{
 }
 
 
+
 /* RED SOCIAL API     */
 .rsApi{
     grid-area: rsApi;
@@ -387,9 +413,27 @@ main>*{
     min-width: 15rem;
     min-height: 10rem;
     height: 100%;
-    justify-content: center;
-    
+    justify-content: center;   
 }
+.rsApi{
+    flex-direction: row;
+}
+.twitter-timeline{
+    overflow-y: scroll;
+    max-height: 28.5rem;
+    flex:1;
+}
+
+.twitter-timeline::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.twitter-timeline {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
+
 
 
 
@@ -402,8 +446,54 @@ main>*{
 /* SABIAS QUE */
 .knowhat{
     grid-area: knowhat;
-    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-image: url("../assets/img/2woodenBanner\ -\ acostado.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
 
+.knowhat-fotito{
+    display:block;
+    width: 6rem;
+    background-color: rgba(0,0,0,.3);
+    border-radius: 50px;
+    padding: 0.5rem;
+    margin-left: 1rem;
+}
+.knowhat>div{
+    font-weight:bold;
+    text-align: justify;
+    margin: 1.5rem;
+}
+
+.knowhat-button{
+    margin: 0.5rem;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    position:relative;
+    
+}
+
+.knowhat-button:hover::before{
+    content:"Clickeame!";
+    font-weight: bold;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom:0.5rem;
+    width: 6rem;
+    height: 2rem;
+    background-color: burlywood;
+    position:absolute;
+    top: -2.5rem;
+    left: -4rem;
+    animation:wobble;
+    animation-duration: 700ms;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
 }
 
 
@@ -462,7 +552,10 @@ main>*{
     margin: 5px 0;
 }
 .notes{
-    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto auto;
 }
 .links{
     display:inline-flex;
@@ -505,7 +598,7 @@ main>*{
 }
 
 
-@media (min-width: 768px){
+@media (min-width: 868px){
 
     .header{
         height:4.5rem!important;
@@ -546,25 +639,37 @@ main>*{
     }
 
     .listaMinis{
-        max-width: 17rem;
+        max-width: 20rem;
 
       }
 
-      .imagen-mini{
+    .imagen-mini{
         width: 50%
-      }
+    }
       .mini-card{ 
         width:100%;
         height:auto;
  
-      }
-      .contenido-miniatura{
+    }
+    .contenido-miniatura{
         padding:0.7rem;
         padding:0.7rem;
-      }
-      .contenido-miniatura div{
+    }
+    .contenido-miniatura div{
         font-size: 0.7rem;
-        }
+    }
+
+
+    .rsApi{
+        max-width:20rem;
+
+    }
+    .twitter-timeline{
+        max-height: 82.5rem!important;
+        overflow-y: scroll;    
+    }
+
+
 
     .footer{
         flex-direction: row;
@@ -578,10 +683,67 @@ main>*{
         flex-direction: column;
     }
     
+    .twitter-timeline{
+        max-height: 145.5rem!important;   
+    }
+
+    .knowhat{
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        max-width: 15rem;
+        background-image: url("../assets/img/2woodenBanner.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+    }
+    
+    .knowhat-fotito{
+        margin-left: 0;
+        padding: 0.5rem;
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+    }
+    .knowhat>div{
+        line-height: 2.5rem;
+        text-align: center;
+        font-size: 1.2rem;
+        width: 8rem;
+        margin-top: auto;
+        margin-bottom: auto;
+        max-height: 35rem;
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+        
+    }
+    .knowhat-button{
+        margin-bottom: 2rem;
+    }
+    
+.knowhat-button:hover::before{
+    top: -3rem;
+    left: -4rem;
+}
     
 }
 
 /* PC */
+
+@media (min-width: 859px){
+
+    .twitter-timeline{
+        max-height: 145.5rem!important;    
+    }
+
+}
+@media (min-width: 880px){
+
+    .twitter-timeline{
+        max-height: 83.5rem!important;    
+    }
+
+}
 
 @media (min-width: 900px){
     .carousel{
@@ -594,10 +756,19 @@ main>*{
 
         grid-auto-rows: minmax(22rem, 24rem);
 
+    }   
+}
+@media (min-width: 1098px){
+
+    .twitter-timeline{
+        max-height: 55.5rem!important;
+        overflow-y: scroll;
+        /* Hide scrollbar for IE, Edge and Firefox */
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    
     }
-    
-    
-    
+
 }
 
 

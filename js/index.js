@@ -2,7 +2,9 @@ const buttons = document.querySelectorAll("[data-carousel-button]")
 const buttonNext = document.querySelector(".next")
 const burga = ".burguer-ico";
 
-
+function randomizer(){
+  return Math.floor(Math.random()*100);  
+}
 // El cambiador de la hamburguesa
 function changeMenu(x) {
   x.classList.toggle("change");
@@ -39,7 +41,7 @@ function hideMenuOnResize() {
 //NOTICIAS FETCH JSON
 
 function traerCartas(fuente,clase,subclase){
-fetch(`/${fuente}`)
+fetch(`${fuente}`)
   .then(response => response.json())
   .then((data)=>{
     for(let i in data){
@@ -48,7 +50,8 @@ fetch(`/${fuente}`)
         <img class="photo" src="${data[i].foto}">
         <div class="titulo">${data[i].titulo}</div>
         <div class="description">${data[i].descripcion}</div>
-        <div class="seemore"><a href="#">Ver mas</a></div>
+        <div class="seemore"><a href="${data[i].link}">Ver mas</a></div>
+
       </article>
       `
     }
@@ -56,7 +59,7 @@ fetch(`/${fuente}`)
 }
 
 function photoCarousel(fuente){
-  fetch(`/${fuente}`).then(response=>response.json()).then(data =>{
+  fetch(`${fuente}`).then(response=>response.json()).then(data =>{
     for(let i=0; i<3; i++){
       document.querySelector(".data-slides").innerHTML+=      
       ` <li class="slide">
@@ -70,13 +73,14 @@ function photoCarousel(fuente){
 }
 
 function miniaturas(fuente){
-  fetch(`/${fuente}`).then(response=>response.json()).then(data =>{
+  fetch(`${fuente}`).then(response=>response.json()).then(data =>{
     for(let i in data){
+      let pos = parseInt(i)+1;
       document.querySelector(".listaMinis").innerHTML+=      
       ` <li class="mini-card">
             <div class="imagen-mini"><img src="${data[i].foto}" alt="Img1"></div>
           <div class="contenido-miniatura">
-            <div>${data[i].id}</div>
+            <div>${pos}</div>
             <div>${data[i].nature}</div>
             <div>${data[i].titulo}</div>
           </div>
@@ -86,6 +90,19 @@ function miniaturas(fuente){
   })
 
 }
+
+function knowWhat(fuente){
+  fetch(`${fuente}`).then(response=>response.json()).then(data =>{
+    document.querySelector(".knowhat").innerHTML=`
+
+    <img class="knowhat-fotito" src="/assets/img/beer-mug.gif">
+    <div class="knowhat-content">${data[randomizer()].content}</div>
+    <button class="knowhat-button" onclick="knowWhat('../assets/json/knowhat.json')"> <i class="fa-solid fa-recycle"></i></button>
+    `
+  })
+}
+
+
 // Carousel
 function carousel(){buttons.forEach(button => {
   button.addEventListener("click", () => {
@@ -116,29 +133,79 @@ function carousel(){buttons.forEach(button => {
 }
 
 
-setTimeout(()=>{buttonNext.click()}, 50)
-var myInterval = setInterval(()=>{buttonNext.click()}, 7000)
+function header(){
+  document.querySelector(".header").innerHTML =
+  `
+  <div class="burguer-ico" onclick="changeMenu(this)">
+        <div class="bar-1"></div>
+        <div class="bar-2"></div>
+        <div class="bar-3"></div>
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li target="#noticias">Noticias</li>
+          <li>Reviews</li>
+          <li>Foro</li>
+          <li><a href="/internal/contacto/contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="user-ico"><i class="fa-solid fa-user fa-xl"></i></div>
+  `
+}
 
+function footer(){
+  document.querySelector(".footer").innerHTML=
+  `
+  <div class="rs">
+  <a><i class="fa-brands fa-facebook fa-lg"></i></a>
+  <a><i class="fa-brands fa-square-twitter fa-lg"></i></a>
+  <a><i class="fa-brands fa-square-instagram fa-lg"></i></a>
+  <a><i class="fa-brands fa-discord fa-lg"></i></a>
+  <a><i class="fa-brands fa-youtube fa-lg"></i></a>
+  <a><i class="fa-brands fa-github fa-lg"></i></a>
+</div>
+<div class="notes">
+  <div>ArcadiaInn Group © 2022</div>
+  <div>Calle Falsa 1234 - Buenos Aires - Argentina</div>
+  <div><a href="#">arcadiainn@outlook.com</a></div>
+</div>
+<div class="links">
+  <a href="#">Contacto</a>
+  <a href="#">Unite</a>
+  <a href="#">Prensa</a>
+</div>
+  `
+}
 
-// Carousel automatizado
-photoCarousel('noticias.json')
-miniaturas('noticias.json')
-
-carousel()
 
 
 // MAIN 
 
+// Carousel automatizado
+
+header();
+
+
+setTimeout(()=>{buttonNext.click()}, 100)
+var myInterval = setInterval(()=>{buttonNext.click()}, 7000)
+photoCarousel('../assets/json/noticias.json')
+miniaturas('../assets/json/noticias.json')
+
+carousel()
+
+knowWhat('../assets/json/knowhat.json');
 
 
 document.addEventListener("click", hideMenu);
 
+
 window.onresize = ()=>{hideMenuOnResize();}
 
-traerCartas('noticias.json','.noticias','.container')
-traerCartas('reviews.json','.reviews','.container')
-traerCartas('opiniones.json','.opinion','.container')
+traerCartas('../assets/json/noticias.json','.noticias','.container')
+traerCartas('../assets/json/reviews.json','.reviews','.container')
+traerCartas('../assets/json/opiniones.json','.opinion','.container')
 
+footer();
 
 
 
