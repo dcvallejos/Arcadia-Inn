@@ -50,7 +50,7 @@ fetch(`${fuente}`)
         <img class="photo" src="${data[i].foto}">
         <div class="titulo">${data[i].titulo}</div>
         <div class="description">${data[i].descripcion}</div>
-        <div class="seemore"><a href="${data[i].link}">Ver mas</a></div>
+        <div class="seemore"><a href="${data[i].link}">Ver más</a></div>
 
       </article>
       `
