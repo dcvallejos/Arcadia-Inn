@@ -44,7 +44,7 @@ function traerCartas(fuente,clase,subclase){
 fetch(`${fuente}`)
   .then(response => response.json())
   .then((data)=>{
-    for(let i in data){
+    for(let i=0;i<6;i++){
       document.querySelector(`${clase}`).querySelector(`${subclase}`).innerHTML+=`
       <article class="card">
         <img class="photo" src="${data[i].foto}">
@@ -58,8 +58,18 @@ fetch(`${fuente}`)
   })
 }
 
-function photoCarousel(fuente){
-  fetch(`${fuente}`).then(response=>response.json()).then(data =>{
+function photoCarousel(){
+  fetch('../assets/json/noticias.json').then(response=>response.json()).then(data =>{
+    for(let i=0; i<3; i++){
+      document.querySelector(".data-slides").innerHTML+=      
+      ` <li class="slide">
+          <img src="${data[i].foto}" ${i==0?"data-active":""} alt="Img1">
+          <p class="subtitle">${data[i].titulo}</p>
+        </li>
+      `
+    }
+  })
+  fetch('../assets/json/reviews.json').then(response=>response.json()).then(data =>{
     for(let i=0; i<3; i++){
       document.querySelector(".data-slides").innerHTML+=      
       ` <li class="slide">
@@ -72,17 +82,35 @@ function photoCarousel(fuente){
 
 }
 
-function miniaturas(fuente){
-  fetch(`${fuente}`).then(response=>response.json()).then(data =>{
-    for(let i in data){
-      let pos = parseInt(i)+1;
+function miniaturas(){
+  var pos=0;
+  fetch(`../assets/json/noticias.json`).then(response=>response.json()).then(data =>{
+    for(let i =0; i<3;i++){
+      pos++
       document.querySelector(".listaMinis").innerHTML+=      
       ` <li class="mini-card">
             <div class="imagen-mini"><img src="${data[i].foto}" alt="Img1"></div>
+            <a class="link-mini" href="${data[i].link}"></a>
           <div class="contenido-miniatura">
-            <div>${pos}</div>
-            <div>${data[i].nature}</div>
-            <div>${data[i].titulo}</div>
+            <div class="pos">${pos}</div>
+            <div class="tipo-mini">Noticia</div>
+            <div class="titulo-mini">${data[i].titulo}</div>
+          </div>
+        </li>
+      `
+    }
+  })
+  fetch(`../assets/json/reviews.json`).then(response=>response.json()).then(data =>{
+    for(let i =0; i<3;i++){
+      pos++
+      document.querySelector(".listaMinis").innerHTML+=      
+      ` <li class="mini-card">
+            <div class="imagen-mini"><img src="${data[i].foto}" alt="Img1"></div>
+            <a class="link-mini" href="${data[i].link}"></a>
+          <div class="contenido-miniatura">
+            <div class="pos">${pos}</div>
+            <div class="tipo-mini">Review</div>
+            <div class="titulo-mini">${data[i].titulo}</div>
           </div>
         </li>
       `
@@ -97,7 +125,7 @@ function knowWhat(fuente){
 
     <img class="knowhat-fotito" src="/assets/img/beer-mug.gif">
     <div class="knowhat-content">${data[randomizer()].content}</div>
-    <button class="knowhat-button" onclick="knowWhat('../assets/json/knowhat.json')"> <i class="fa-solid fa-recycle"></i></button>
+    <button class="knowhat-button" onclick="knowWhat('../assets/json/knowhat.json')"> <i class="fa-solid fa-recycle fa-xl"></i></button>
     `
   })
 }
@@ -188,8 +216,8 @@ header();
 
 setTimeout(()=>{buttonNext.click()}, 100)
 var myInterval = setInterval(()=>{buttonNext.click()}, 7000)
-photoCarousel('../assets/json/noticias.json')
-miniaturas('../assets/json/noticias.json')
+photoCarousel()
+miniaturas()
 
 carousel()
 

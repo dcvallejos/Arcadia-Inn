@@ -8,21 +8,42 @@
     },
     {
         "id": "2",
-        "foto": "./assets/img/ELDENRING.jpg",
-        "titulo": "ELDEN RING",
-        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
+        "foto": "../../internal/reviews/monkey_island_6/img/logo.png",
+        "titulo": "RETURN TO MONKEY ISLAND | REVIEW",
+        "descripcion" : "Lo mejor de una gran aventura de ultramar es llegar a buen puerto",
+        "link" : "../../internal/reviews/monkey_island_6/monkey.html"
     },
     {
         "id": "3",
-        "foto": "./assets/img/farcry.jpg",
-        "titulo": "FAR CRY 6",
-        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
+        "foto": "../../internal/reviews/biomutant_ng/img/logo.jpg",
+        "titulo": "BIOMUTANT NEXT-GEN | REVIEW",
+        "descripcion" : "Un peludo aigo cuyas decisiones van a condicionar el destino del mundo en next-gen",
+        "link" : "../../internal/reviews/biomutant_ng/biomutant.html"
+
     },
     {
         "id": "4",
-        "foto": "./assets/img/VALORANT.jpg",
-        "titulo": "VALORANT",
-        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
-    }
+        "foto": "../../internal/reviews/Jojo/img/logo.jpg",
+        "titulo": "JOJO'S BIZARRE ADVENTURE: ALL STAR BATTLE R | REVIEW",
+        "descripcion" : "A pura piña y desfile.",
+        "link" : "../../internal/reviews/Jojo/jojoba.html"
+        
+    },
+    {
+        "id": "5",
+        "foto": "../../internal/reviews/warhamm3/img/logo.png",
+        "titulo": "TOTAL WAR: WARHAMMER 3 | UPDATE + DLC | REVIEW",
+        "descripcion" : "A reventar orcos sin piedad",
+        "link" : "../../internal/reviews/warhamm3/warhamm3.html"
 
+    },
+    {
+        "id": "6",
+        "foto": "../../internal/reviews/sdgundamw/img/logo.png",
+        "titulo": "SD GUNDAM BATTLE ALLIANCE | REVIEW",
+        "descripcion" : "“¿Acaso estamos en un episodio de crossover?”",
+        "link" : "../../internal/reviews/sdgundamw/sdgundamw.html"
+
+    }
+    
 ]
