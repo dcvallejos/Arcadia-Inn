@@ -1,7 +1,6 @@
 [
     {
         "id": "1",
-        "nature": "Noticia",
         "foto": "../../internal/noticias/psvr2/img/PSVR2.png",
         "titulo": "Se reveló el diseño del PSVR 2",
         "descripcion" : "PlayStation finalmente mostró el diseño de su nuevo casco de realidad virtual.",
@@ -9,7 +8,6 @@
     },
     {
         "id": "2",
-        "nature": "Noticia",
         "foto": "../../internal/noticias/sf6/img/SF6.jpg",
         "titulo": "Trailer de Street Fighter 6",
         "descripcion" : "Capcom finalmente develó un trailer de Street Fighter VI.",
@@ -17,7 +15,6 @@
     },
     {
         "id": "3",
-        "nature": "Noticia",
         "foto": "../../internal/noticias/ndfeb2022/img/ND022022.jpg",
         "titulo": "Nintendo Direct - Febrero de 2022",
         "descripcion" : "Los principales anuncios de la Nintendo Direct de febrero de 2022.",
@@ -25,7 +22,6 @@
     },
     {
         "id": "4",
-        "nature": "Noticia",
         "foto": "../../internal/noticias/MSAB/img/MSAB.png",
         "titulo": "MS adquiere Activision Blizzard",
         "descripcion" : "En un atrevido movimiento, Phil Spencer anunció la adquisición por parte de Microsoft.",
@@ -33,11 +29,17 @@
     },
     {
         "id": "5",
-        "nature": "Noticia",
         "foto": "../../internal/noticias/gp012022/img/GP012022.png",
         "titulo": "GamePass - Enero de 2022",
         "descripcion" : "Los primeros juegos para GamePass del año.",
         "link" : "../../internal/noticias/gp012022/gp012022.html"
+    },
+    {
+        "id": "6",
+        "foto": "../../internal/noticias/PUBG y DbD/img/photo-1.jpg",
+        "titulo": "Dead by Daylight llega a PUBG: Battlegrounds y New State Mobile",
+        "descripcion" : "KRAFTON y Behaviour Interactive se asocian en una colaboración de Dead by Daylight, llena de cosméticos aterradores y un terrorífico evento para sus principales juegos battle royale.",
+        "link" : "../../internal/noticias/PUBG y DbD/PUBGNw.html"
     }
 
 ]

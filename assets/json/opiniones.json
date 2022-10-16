@@ -1,27 +1,26 @@
 [
     {
         "id": "1",
-        "foto": "./assets/img/doom.jpg",
-        "titulo": "DOOM 2016",
-        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
+        "foto": "../../internal/opiniones/avatares/avatarDani.png",
+        "titulo": "Acerca de los videojuegos",
+        "descripcion" : "Los videojuegos: un nuevo espejo en que mirar nuestra cultura",
+        "link" : "../../internal/opiniones/Daniel/Juego como historia.html/article.html"
     },
     {
         "id": "2",
-        "foto": "./assets/img/ELDENRING.jpg",
-        "titulo": "ELDEN RING",
-        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
+        "foto": "../../internal/opiniones/avatares/avatarHugo.png",
+        "titulo": "El videojuego: Aquel portal a otra dimension",
+        "descripcion" : "Un nuevo espejo en que mirar nuestra cultura",
+        "link" : "../../internal/opiniones/Hugo/Juego como nuevo espejo/article.html"
+
     },
     {
         "id": "3",
-        "foto": "./assets/img/farcry.jpg",
-        "titulo": "FAR CRY 6",
-        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
-    },
-    {
-        "id": "4",
-        "foto": "./assets/img/VALORANT.jpg",
-        "titulo": "VALORANT",
-        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
+        "foto": "../../internal/opiniones/avatares/avatarSol.png",
+        "titulo": "Hechos videojueguiles",
+        "descripcion" : "Un catch-up sobre el mundo de 'los jueguitos'",
+        "link" : "../../internal/opiniones/Sol/Facts sobre jueguitos/article.html"
+
     }
 
 ]

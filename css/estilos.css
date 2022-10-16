@@ -6,6 +6,8 @@
     font-family: 'Almendra SC', serif;;
     box-sizing: border-box;
 }
+
+
 html{
     margin: 0 auto
 }
@@ -350,15 +352,15 @@ main>*{
     color:white;
     bottom: 2rem;
     font-weight:bold;
-    left: 10%;
-    right:10%;
+    left: 0;
     height:auto;
     display:block;
     backdrop-filter: blur(20px);
     background-color:rgba(0,0,0,0.5);
-    border-radius: 15px;
     font-size: 1.5rem;
-    box-sizing: border-box;
+    width: 100%;
+    letter-spacing: 2px;
+
 }
 
 
@@ -378,6 +380,10 @@ main>*{
     padding: 1rem
 }
 
+
+.opinion .container{    
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+}
 
 
 .encabezado{
@@ -434,6 +440,11 @@ main>*{
     font-weight: 400;
 }
 
+.description::first-letter{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 .card .seemore{
     display:flex;
     flex-direction: column;
@@ -449,10 +460,26 @@ main>*{
     border-top-left-radius: 15px;
     text-align:center;
     transition: all 0.5s ease;
+    
 
 
 }
+
 .seemore a{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    height: 2rem;
+    transition: all 0.5s ease;
+
+
+
+}
+
+.seemore a p{
     margin-left:0.5rem;
     margin-right:0.5rem;
     font-size: 0.7rem;
@@ -461,9 +488,11 @@ main>*{
     text-decoration: none;
     width:3rem;
 
+
 }
 
-.seemore:hover{
+
+.seemore a:hover{
     padding-right: 4rem;
     transition: all 0.5s ease;
     background-color: rgba(79, 48, 21, 0.89);
@@ -541,7 +570,19 @@ scrollbar-width: none;  /* Firefox */
     margin: 1.5rem;
     animation: pulse;
     animation-duration: 500ms;
+
 }
+.knowhat-content{
+    color: #e38b3862;
+    text-shadow: 0px 1px 2px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.7);
+ }
+
+ .knowhat-content::first-letter{
+    font-size: 2rem;
+    margin-right: 2px;
+    font-weight: bold;
+ }
+
 
 .knowhat-button{
     margin: 0.5rem;
@@ -577,21 +618,27 @@ scrollbar-width: none;  /* Firefox */
     clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
 }
 
-
+/* BANNER */
 .banner{
     grid-area: banner;
 }
 
-/* BANNER */
+
+/*                 OPINION SECTOR                */
 
 
 .opinion{
     grid-area: opinion;
 }
+
+.opinion .container{
+    margin-bottom: 2rem;
+}
 .opinion .card{
     border-top-left-radius: 120px ;
     border-top-right-radius: 120px ;
     border-bottom-right-radius: 20px ;
+    
 
 }
 
@@ -603,9 +650,9 @@ scrollbar-width: none;  /* Firefox */
 
 }
 
-/* OPINION SECTOR */
 
 
+/*                FOOTER SECTOR              */
 
 
 
@@ -621,7 +668,6 @@ scrollbar-width: none;  /* Firefox */
     text-align: center;
 }
 
-/*                FOOTER SECTOR              */
 .rs{
     display: grid;
     grid-template-columns: repeat(3, 1fr) ;
@@ -703,6 +749,7 @@ scrollbar-width: none;  /* Firefox */
     .nav-list li{
         display:inline;
         margin: 0 1rem;
+        font-weight: bold;
     }
     .main{
         grid-template:
@@ -768,6 +815,7 @@ scrollbar-width: none;  /* Firefox */
     }
     .links{
         flex-direction: column;
+        align-items: flex-end;
     }
     
     .twitter-timeline{
@@ -806,6 +854,9 @@ scrollbar-width: none;  /* Firefox */
     }
     .knowhat-button{
         margin-bottom: 2rem;
+        margin-right:0;
+        margin-left: 0;
+
     }
     
 .knowhat-button:hover::before{
@@ -817,10 +868,11 @@ scrollbar-width: none;  /* Firefox */
 
 @media (max-width: 506px){
 
-    .container{
+    .container, .opinion .container{
         grid-template-columns: 16rem;           
         justify-content: center;
     }
+
 }
 
 /* PC */
@@ -832,10 +884,10 @@ scrollbar-width: none;  /* Firefox */
     }
 
 }
-@media (min-width: 880px){
+@media (min-width: 867px){
 
     .twitter-timeline{
-        max-height: 83.5rem!important;    
+        max-height: 82.5rem!important;    
     }
 
 }
@@ -853,7 +905,7 @@ scrollbar-width: none;  /* Firefox */
 
     }   
 }
-@media (min-width: 1098px){
+@media (min-width: 1013px){
 
     .twitter-timeline{
         max-height: 55.5rem!important;
