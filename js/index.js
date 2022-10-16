@@ -58,29 +58,6 @@ fetch(`${fuente}`)
   })
 }
 
-function photoCarousel(){
-  fetch('../assets/json/noticias.json').then(response=>response.json()).then(data =>{
-    for(let i=0; i<3; i++){
-      document.querySelector(".data-slides").innerHTML+=      
-      ` <li class="slide">
-          <img src="${data[i].foto}" ${i==0?"data-active":""} alt="Img1">
-          <p class="subtitle">${data[i].titulo}</p>
-        </li>
-      `
-    }
-  })
-  fetch('../assets/json/reviews.json').then(response=>response.json()).then(data =>{
-    for(let i=0; i<3; i++){
-      document.querySelector(".data-slides").innerHTML+=      
-      ` <li class="slide">
-          <img src="${data[i].foto}" ${i==0?"data-active":""} alt="Img1">
-          <h1 class="subtitle">${data[i].titulo}</h1>
-        </li>
-      `
-    }
-  })
-
-}
 
 function miniaturas(){
   var pos=0;
@@ -89,14 +66,14 @@ function miniaturas(){
       pos++
       document.querySelector(".listaMinis").innerHTML+=      
       ` <li class="mini-card">
-            <div class="imagen-mini"><img src="${data[i].foto}" alt="Img1"></div>
-            <a class="link-mini" href="${data[i].link}"></a>
-          <div class="contenido-miniatura">
-            <div class="pos">${pos}</div>
-            <div class="tipo-mini">Noticia</div>
-            <div class="titulo-mini">${data[i].titulo}</div>
-          </div>
-        </li>
+      <div class="imagen-mini"><img src="${data[i].foto}" alt="Img1"></div>
+      <a class="link-mini" href="${data[i].link}"></a>
+      <div class="contenido-miniatura">
+      <div class="pos">${pos}</div>
+      <div class="tipo-mini">Noticia</div>
+      <div class="titulo-mini">${data[i].titulo}</div>
+      </div>
+      </li>
       `
     }
   })
@@ -105,24 +82,24 @@ function miniaturas(){
       pos++
       document.querySelector(".listaMinis").innerHTML+=      
       ` <li class="mini-card">
-            <div class="imagen-mini"><img src="${data[i].foto}" alt="Img1"></div>
-            <a class="link-mini" href="${data[i].link}"></a>
-          <div class="contenido-miniatura">
-            <div class="pos">${pos}</div>
-            <div class="tipo-mini">Review</div>
-            <div class="titulo-mini">${data[i].titulo}</div>
-          </div>
-        </li>
+      <div class="imagen-mini"><img src="${data[i].foto}" alt="Img1"></div>
+      <a class="link-mini" href="${data[i].link}"></a>
+      <div class="contenido-miniatura">
+      <div class="pos">${pos}</div>
+      <div class="tipo-mini">Review</div>
+      <div class="titulo-mini">${data[i].titulo}</div>
+      </div>
+      </li>
       `
     }
   })
-
+  
 }
 
 function knowWhat(fuente){
   fetch(`${fuente}`).then(response=>response.json()).then(data =>{
     document.querySelector(".knowhat").innerHTML=`
-
+    
     <img class="knowhat-fotito" src="/assets/img/beer-mug.gif">
     <div class="knowhat-content">${data[randomizer()].content}</div>
     <button class="knowhat-button" onclick="knowWhat('../assets/json/knowhat.json')"> <i class="fa-solid fa-recycle fa-xl"></i></button>
@@ -134,30 +111,42 @@ function knowWhat(fuente){
 // Carousel
 function carousel(){buttons.forEach(button => {
   button.addEventListener("click", () => {
-
+    
     clearInterval(myInterval)
     myInterval = setInterval(()=>{buttonNext.click()}, 7000)
     
     const offset = button.dataset.carouselButton === "next" ? 1 : -1;
     const slides = button
-      .closest("[data-carousel]")
-      .querySelector("[data-slides]");
-
-
-      const activeSlide = slides.querySelector("[data-active]");
-      let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-      
-      if (newIndex < 0)
-      newIndex = slides.children.length - 1;
-      if (newIndex >= slides.children.length)
-      newIndex = 0;
-      
-      slides.children[newIndex].dataset.active = true;
-
-      delete activeSlide.dataset.active;
-      
-    });
+    .closest("[data-carousel]")
+    .querySelector("[data-slides]");
+    
+    
+    const activeSlide = slides.querySelector("[data-active]");
+    let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+    
+    if (newIndex < 0)
+    newIndex = slides.children.length - 1;
+    if (newIndex >= slides.children.length)
+    newIndex = 0;
+    
+    slides.children[newIndex].dataset.active = true;
+    
+    delete activeSlide.dataset.active;
+    
   });
+});
+}
+function photoCarousel(fuente){
+  fetch(`${fuente}`).then(response=>response.json()).then(data =>{
+    for(let i=0; i<3; i++){
+      document.querySelector(".data-slides").innerHTML+=      
+      ` <li class="slide">
+          <img src="${data[i].foto}" ${i==0?"data-active":""} alt="Img1">
+          <p class="subtitle">${data[i].titulo}</p>
+        </li>
+      `
+    }
+  })
 }
 
 
@@ -165,9 +154,9 @@ function header(){
   document.querySelector(".header").innerHTML =
   `
   <div class="burguer-ico" onclick="changeMenu(this)">
-        <div class="bar-1"></div>
-        <div class="bar-2"></div>
-        <div class="bar-3"></div>
+  <div class="bar-1"></div>
+  <div class="bar-2"></div>
+  <div class="bar-3"></div>
       </div>
       <nav>
         <ul class="nav-list">
@@ -214,12 +203,14 @@ function footer(){
 header();
 
 
-setTimeout(()=>{buttonNext.click()}, 100)
+setTimeout(()=>{buttonNext.click()}, 50)
 var myInterval = setInterval(()=>{buttonNext.click()}, 7000)
-photoCarousel()
-miniaturas()
 
 carousel()
+var noticiasCarousel = photoCarousel('../assets/json/noticias.json')
+var reviewsCarousel = photoCarousel('../assets/json/reviews.json')
+miniaturas()
+
 
 knowWhat('../assets/json/knowhat.json');
 
