@@ -161,8 +161,8 @@ function header(){
       <nav>
         <ul class="nav-list">
           <li><a href="#noticias">Noticias</a></li>
-          <li><a href="#reviews">Reviews</li>
-          <li>Foro</li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#opinion">Opiniones</a></li>
           <li><a href="/internal/contacto/contacto.html">Contacto</a></li>
         </ul>
       </nav>
