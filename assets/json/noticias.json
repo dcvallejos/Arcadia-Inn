@@ -2,37 +2,42 @@
     {
         "id": "1",
         "nature": "Noticia",
-        "foto": "./assets/img/doomlogo.webp",
-        "titulo": "DOOM 2016 | El regreso de un clasicazo",
-        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip Lorem ipsum dolor sit amet, consectetur adip Lorem ipsum dolor sit amet, consectetur adip"
+        "foto": "../../internal/noticias/psvr2/img/PSVR2.png",
+        "titulo": "Se reveló el diseño del PSVR 2",
+        "descripcion" : "PlayStation finalmente mostró el diseño de su nuevo casco de realidad virtual.",
+        "link" : "../../internal/noticias/psvr2/psvr2.html"
     },
     {
         "id": "2",
         "nature": "Noticia",
-        "foto": "./assets/img/ELDENRING.jpg",
-        "titulo": "ELDEN RING | Bienvenidos a la aventura",
-        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
+        "foto": "../../internal/noticias/sf6/img/SF6.jpg",
+        "titulo": "Trailer de Street Fighter 6",
+        "descripcion" : "Capcom finalmente develó un trailer de Street Fighter VI.",
+        "link" : "../../internal/noticias/sf6/sf6.html"
     },
     {
         "id": "3",
         "nature": "Noticia",
-        "foto": "./assets/img/farcry.jpg",
-        "titulo": "FAR CRY 6 | REVIEW",
-        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
+        "foto": "../../internal/noticias/ndfeb2022/img/ND022022.jpg",
+        "titulo": "Nintendo Direct - Febrero de 2022",
+        "descripcion" : "Los principales anuncios de la Nintendo Direct de febrero de 2022.",
+        "link" : "../../internal/noticias/ndfeb2022/ndfeb2022.html"
     },
     {
         "id": "4",
         "nature": "Noticia",
-        "foto": "./assets/img/VALORANT.jpg",
-        "titulo": "VALORANT",
-        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
+        "foto": "../../internal/noticias/MSAB/img/MSAB.png",
+        "titulo": "MS adquiere Activision Blizzard",
+        "descripcion" : "En un atrevido movimiento, Phil Spencer anunció la adquisición por parte de Microsoft.",
+        "link" : "../../internal/noticias/MSAB/msab.html"
     },
     {
-        "id": "4",
+        "id": "5",
         "nature": "Noticia",
-        "foto": "./assets/img/rl.jpg",
-        "titulo": "ROCKET LEAGUE",
-        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adip"
+        "foto": "../../internal/noticias/gp012022/img/GP012022.png",
+        "titulo": "GamePass - Enero de 2022",
+        "descripcion" : "Los primeros juegos para GamePass del año.",
+        "link" : "../../internal/noticias/gp012022/gp012022.html"
     }
 
 ]

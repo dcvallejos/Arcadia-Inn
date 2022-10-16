@@ -50,7 +50,7 @@ fetch(`${fuente}`)
         <img class="photo" src="${data[i].foto}">
         <div class="titulo">${data[i].titulo}</div>
         <div class="description">${data[i].descripcion}</div>
-        <div class="seemore"><a href="${data[i].link}">Ver mas</a></div>
+        <div class="seemore"><a href="${data[i].link}">Ver más</a></div>
 
       </article>
       `
@@ -171,8 +171,8 @@ function header(){
       </div>
       <nav>
         <ul class="nav-list">
-          <li target="#noticias">Noticias</li>
-          <li>Reviews</li>
+          <li><a href="#noticias">Noticias</a></li>
+          <li><a href="#reviews">Reviews</li>
           <li>Foro</li>
           <li><a href="/internal/contacto/contacto.html">Contacto</a></li>
         </ul>
