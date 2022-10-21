@@ -1,4 +1,4 @@
-body {
+#home {
     background: url("../assets/img/sunny-landscape-background.jpg");
     height: 400px;
     background-position: center;
@@ -69,3 +69,14 @@ body {
     to {opacity: 1;}
 }
 
+#door {
+    background-color: black;
+}
+
+#vid-door {
+    display: flex;
+    height: auto;
+    width: auto;
+    justify-content: center;
+    margin-top: 10%;
+}
