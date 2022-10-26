@@ -12,9 +12,9 @@ function header(){
         <nav>
           <ul class="nav-list">
             <li><a href="/index.html"><i class="fa-solid fa-house fa-xl"></i></a></li>
-            <li><a>Noticias</a></li>
-            <li><a>Reviews</a></li>
-            <li><a>Foro</a></li>
+            <li><a href="/index.html#noticias">Noticias</a></li>
+            <li><a href="/index.html#reviews">Reviews</a></li>
+            <li><a href="/index.html#opinion">Opiniones</a></li>
             <li><a href="/internal/contacto/contacto.html">Contacto</a></li>
           </ul>
         </nav>

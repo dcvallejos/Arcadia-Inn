@@ -13,6 +13,7 @@ body>*, main>*{
 
 }
 
+
 main>*{
     min-height:auto;
     text-align:left;
@@ -40,10 +41,10 @@ h3{
     padding: 1rem;
 }
 
-ul{
+.main_internal ul{
     padding-left: 4rem;
 }
-li{
+.main_internal li{
     padding-left: 1rem;
     margin-bottom: 1rem;
 }

@@ -13,11 +13,8 @@ html{
     scroll-behavior: smooth;
     max-width: 1100px!important;
     height:100%!important;
-    background: url("http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/cba309e5a2e177f.png") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background: url("http://pm1.narvii.com/7096/a44f28d043453a63f142ada4cac659968f1cfbaer1-480-480v2_uhq.jpg") repeat center center fixed; 
+    background-size: 20rem;
 }
 
 
@@ -44,18 +41,10 @@ a, a:visited, a:hover, a:active {
   }
 
 .opinion, .reviews, .noticias{
-    background-color:rgba(85, 48, 3, 0.63);
+    background-color:rgba(85, 48, 3, 0.9);
+    scroll-margin-top: 4.5rem;
 }
 
-.arcadia-top-background1{
-    position:absolute;
-    left:0;
-    top:0;
-    padding-top: 3rem;
-    float:left;
-    width:25rem;
-    background-color: #79CAF9
-}
 .arcadia-top-background{
     position:absolute;
     right:0;
@@ -64,8 +53,10 @@ a, a:visited, a:hover, a:active {
     height: 39.89rem;
     background-color: #79CAF9;
     overflow:hidden;
+    filter:blur(3px);
 
 }
+
 
 .logoPag{
     grid-area: logopag;
@@ -76,7 +67,7 @@ a, a:visited, a:hover, a:active {
     position: relative;
     overflow: hidden;
     background-image: url(/assets/img/sunny-landscape.jpg);
-    background-repeat: no-repeat, repeat;
+    background-repeat: no-repeat;
     padding-top: 25rem;
     background-size: 1100px 40rem;
     background-position: bottom left;
@@ -92,6 +83,7 @@ a, a:visited, a:hover, a:active {
     top: -2rem;
     left: 29%;
     z-index: 1;
+    
 }
 
 .giffy{
@@ -115,7 +107,8 @@ a, a:visited, a:hover, a:active {
     overflow: hidden;  
     transition: 0.4s ease-out;
     align-self: start;
-    z-index:10;
+    top:0;
+    z-index:12;
     background: url("/assets/img/center-nav-w.png"); 
     background-size: 99.9% 4.7rem;
     background-repeat: no-repeat;
@@ -149,6 +142,7 @@ a, a:visited, a:hover, a:active {
     cursor: pointer;
     max-width: 35px;
     margin: 1rem 1rem;    
+    
   }
   
 .bar-1, .bar-2, .bar-3 {
@@ -181,6 +175,10 @@ a, a:visited, a:hover, a:active {
     background-position: 3rem, 5rem;
     background-size: 12px;
     margin-block-start: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter:blur(5px);
+    width:9rem;
+
 
 
 }
@@ -505,11 +503,12 @@ main>*{
     left: 0;
     width: 100%;
     height: 25px;
-    background: linear-gradient(-135deg, rgba(255, 255, 255, 1) 12px, transparent 0%),
-    linear-gradient(135deg, rgba(255, 255, 255, 1) 12px, transparent 0%);
+    background: linear-gradient(-135deg, rgba(85, 48, 3, 0.9)  8px, transparent 0%),
+    linear-gradient(135deg, rgba(85, 48, 3, 0.9) 8px, transparent 0%);
     background-size: 24px;
     transform:rotate(180deg)
-}
+}    
+
 
 .photo{
     object-fit:cover;
@@ -715,6 +714,15 @@ scrollbar-width: none;  /* Firefox */
 /* BANNER */
 .banner{
     grid-area: banner;
+    height: 20rem;
+}
+
+.banner img{
+    display:block;
+    object-fit: cover;
+    object-position:center;
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -849,12 +857,37 @@ scrollbar-width: none;  /* Firefox */
         list-style-type:none;
         display:block;
         background-image:none;
+        background-color: transparent !important;
+        backdrop-filter:none;
+        width:100%;
     }
     .nav-list li{
-        display:inline;
-        margin: 0 1rem;
+        display:inline-block;
         font-weight: bold;
+        padding-top: 1.5rem;
+        text-align: center;   
+        height: 4.1rem;
+        margin-top: 0;
     }
+
+    .nav-list li::after{
+        opacity: 0;
+        content:"";
+        position:absolute;
+        left:0;
+        width: 0;
+        height: 0;
+        background-image: none;
+        backdrop-filter: none;
+  
+    }
+    
+    .nav-list li:hover{
+        background-color: rgba(0,0,0,0.5);
+        transition: all 0.3s ease;       
+    
+    }
+
     .main{
         grid-template:
         "carousel carousel carousel minis" auto
