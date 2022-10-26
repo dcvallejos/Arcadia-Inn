@@ -11,15 +11,15 @@ function changeMenu(x) {
   }
   
   // Chequea si cuando se hace click se esta targeteando con el mouse a la hamburguesa o a la ventana
-  //  Si clickea fuera del menu, se quita la clase activadora de burga y el drop-down menu
-  // Si clickea en la burga, se agrega la clase drop-down
+
   function hideMenu(e){
     const selectBurguer = e.target.closest(burga);
+    const selectButtonNext = e.target.closest(".next")
     
     if(e.target && selectBurguer){
       document.querySelector('.header').classList.toggle('toggle')
     }
-    else if(e.target && !selectBurguer){
+    else if(e.target && !selectBurguer && !selectButtonNext){
       hideMenuElements();
     }
   }
@@ -38,7 +38,7 @@ function hideMenuOnResize() {
     hideMenuElements();
   }
 }
-//NOTICIAS FETCH JSON
+// FETCH JSON
 
 function traerCartas(fuente,clase,subclase){
 fetch(`${fuente}`)
@@ -57,7 +57,6 @@ fetch(`${fuente}`)
     }
   })
 }
-
 
 function miniaturas(){
   var pos=0;
@@ -149,7 +148,7 @@ function photoCarousel(fuente){
   })
 }
 
-
+// HEADER AND FOOTER PROTOTYPES
 function header(){
   document.querySelector(".header").innerHTML =
   `
@@ -160,10 +159,10 @@ function header(){
       </div>
       <nav>
         <ul class="nav-list">
-          <li><a href="#noticias">Noticias</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#opinion">Opiniones</a></li>
-          <li><a href="/internal/contacto/contacto.html">Contacto</a></li>
+          <li><a href="#noticias"></a><p>Noticias</p></li>
+          <li><a href="#reviews"></a><p>Reviews</p></li>
+          <li><a href="#opinion"></a><p>Opiniones</p></li>
+          <li><a href="/internal/contacto/contacto.html"></a><p>Contacto</p></li>
         </ul>
       </nav>
       <div class="user-ico"><i class="fa-solid fa-user fa-xl"></i></div>
@@ -174,12 +173,12 @@ function footer(){
   document.querySelector(".footer").innerHTML=
   `
   <div class="rs">
-  <a><i class="fa-brands fa-facebook fa-lg"></i></a>
-  <a><i class="fa-brands fa-square-twitter fa-lg"></i></a>
-  <a><i class="fa-brands fa-square-instagram fa-lg"></i></a>
-  <a><i class="fa-brands fa-discord fa-lg"></i></a>
-  <a><i class="fa-brands fa-youtube fa-lg"></i></a>
-  <a><i class="fa-brands fa-github fa-lg"></i></a>
+  <a href="#"><i class="fa-brands fa-facebook fa-lg"></i></a>
+  <a href="#"><i class="fa-brands fa-square-twitter fa-lg"></i></a>
+  <a href="#"><i class="fa-brands fa-square-instagram fa-lg"></i></a>
+  <a href="#"><i class="fa-brands fa-discord fa-lg"></i></a>
+  <a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>
+  <a href="#"><i class="fa-brands fa-github fa-lg"></i></a>
 </div>
 <div class="notes">
   <div>ArcadiaInn Group © 2022</div>
@@ -198,11 +197,11 @@ function footer(){
 
 // MAIN 
 
-// Carousel automatizado
 
 header();
 
 
+// Carousel automatizado
 var myInterval = setInterval(()=>{buttonNext.click()}, 7000)
 
 carousel()
