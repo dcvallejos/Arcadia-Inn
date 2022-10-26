@@ -18,17 +18,17 @@
         <div id="parchment"></div>
 
         <h1>Contacto</h1>
-      <form class ="form-container" action="https://formspree.io/f/xzbwgdkp" method="POST">
+      <form class ="form-container" name="formulario" onsubmit="return validar()" action="https://formspree.io/f/xzbwgdkp" method="POST">
         <div class="form">
             <ul class="form-style-1">
-                <li><label>Nombre y apellido <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="First" /> <input type="text" name="field2" class="field-divided" placeholder="Last" /></li>
+                <li><label>Nombre y apellido <span class="required">*</span></label><input type="text" name="nom" class="field-divided" placeholder="Nombre"/> <input type="text" name="ape" class="field-divided" placeholder="Apellido" /></li>
                 <li>
                     <label>Correo electrónico <span class="required">*</span></label>
-                    <input type="email" name="field3" class="field-long" />
+                    <input type="email" name="mail" class="field-long" />
                 </li>
                 <li>
                     <label>Mensaje <span class="required">*</span></label>
-                    <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+                    <textarea name="men" id="field5" class="field-long field-textarea"></textarea>
                 </li>
                 <li>
                     <input type="submit" value="Enviar" />

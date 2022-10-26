@@ -85,3 +85,28 @@ function header(){
   footer();
   document.addEventListener("click", hideMenu);
   window.onresize = ()=>{hideMenuOnResize();}
+
+// Validación de formulario
+
+function validar() {
+  let n = document.forms["formulario"]["nom"].value;
+  if (n == "") {
+      alert("Completar nombre.");
+      return false;
+  }
+  let a = document.forms["formulario"]["ape"].value;
+  if (a == "") {
+      alert("Completar apellido.");
+      return false;
+  }
+  let m = document.forms["formulario"]["mail"].value;
+  if (m == "") {
+      alert("Completar e-mail.");
+      return false;
+  }
+  let me = document.forms["formulario"]["men"].value;
+  if (me == "") {
+      alert("Completar mensaje.");
+      return false;
+  }
+}
