@@ -36,6 +36,10 @@ Arcadia Inn:
     
     => Si bien no se esta consumiento una API REST externa, se opto por la misma funcionalidad del sitio consumir json's internos.
     
+    => El logo de usuario ha quedado para una implementacion futura de inicio de sesion
+    
+    => Los iconos de redes sociales son meramente decorativos.
+    
     => Subido a netlify
     
     
