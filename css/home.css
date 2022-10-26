@@ -1,0 +1,82 @@
+#home {
+    background: url("../assets/img/sunny-landscape-background.jpg");
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#inn {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    animation: zoom 3s forwards;
+}
+
+#home-inn {
+    height: fit-content;
+    width: fit-content;
+}
+
+@keyframes zoom {
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.5, 1.5);
+    }
+    100% {
+      transform: scale(2, 2);
+    }
+  }
+
+#div-ingresar {
+    display: flex;
+    justify-content: center;
+    border: none;
+    margin-top: 200px;
+    margin-right: 200px;
+}
+
+#bot-ingresar {
+    box-shadow: 3px 4px 0px 0px #8a2a21;
+    background: linear-gradient(to bottom, #e08524 5%, #bd520b 100%);
+    background-color: #e08524;
+    border-radius: 18px;
+    border: 1px solid #d02718;
+    display: inline-block;
+    cursor: pointer;
+    color: #f5f1c2;
+    font-family: Arial;
+    font-size: 20px;
+    padding: 15px 35px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #810e05;
+    opacity: 0;
+    animation: ingresar 3s forwards;
+    animation-delay: 3s;
+}
+#bot-ingresar:hover {
+    background:linear-gradient(to bottom, #bd520b 5%, #e08524 100%);
+    background-color:#bd520b;
+}
+#bot-ingresar:active {
+    position:relative;
+    top:1px;
+}
+
+@keyframes ingresar {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+#door {
+    background-color: black;
+}
+
+#vid-door {
+    display: flex;
+    height: auto;
+    width: auto;
+    justify-content: center;
+    margin-top: 10%;
+}
