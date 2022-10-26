@@ -11,10 +11,13 @@
 html{
     margin: 0 auto;
     scroll-behavior: smooth;
-}
-html{
     max-width: 1100px!important;
     height:100%!important;
+    background: url("http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/cba309e5a2e177f.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 
@@ -27,15 +30,22 @@ body{
     "footer" auto;
     row-gap:1rem;
 
+
 }
 
+
+
 body>*{
-    border:1px solid red;
+    position:relative;
 }
 
 a, a:visited, a:hover, a:active {
     color: inherit;
   }
+
+.opinion, .reviews, .noticias{
+    background-color:rgba(85, 48, 3, 0.63);
+}
 
 .arcadia-top-background1{
     position:absolute;
@@ -51,10 +61,9 @@ a, a:visited, a:hover, a:active {
     right:0;
     top:-14.4rem;
     width:100vw;
-    height: 40.1rem;
+    height: 39.89rem;
     background-color: #79CAF9;
     overflow:hidden;
-    filter: blur(10px);
 
 }
 
@@ -73,6 +82,8 @@ a, a:visited, a:hover, a:active {
     background-position: bottom left;
 
 }
+
+
 
 .arcadiaBanner{
     width: 25rem;
@@ -103,11 +114,33 @@ a, a:visited, a:hover, a:active {
     height: 4.5rem;
     overflow: hidden;  
     transition: 0.4s ease-out;
-    background-color: gray;
-    position:sticky;
-    top:0; 
     align-self: start;
     z-index:10;
+    background: url("/assets/img/center-nav-w.png"); 
+    background-size: 99.9% 4.7rem;
+    background-repeat: no-repeat;
+    border-radius: 7px;    
+    position:sticky;
+}
+
+
+.header::before{
+    content: "";
+    position: absolute;
+    background-image: url("/assets/img/l-nav-w.png");
+    background-repeat: no-repeat;
+    left:0;
+    width: 11px;    
+    height: 100%;
+}
+.header::after{
+    content: "";
+    position: absolute;
+    background-image: url("/assets/img/r-nav-w.png");
+    background-repeat: no-repeat;
+    right:0;
+    width: 11px;    
+    height: 100%;
 }
 /* 505.68 height noticias api */
 .burguer-ico {
@@ -115,7 +148,7 @@ a, a:visited, a:hover, a:active {
     display: inline-block;
     cursor: pointer;
     max-width: 35px;
-    margin: 1rem 1rem;
+    margin: 1rem 1rem;    
   }
   
 .bar-1, .bar-2, .bar-3 {
@@ -140,18 +173,66 @@ a, a:visited, a:hover, a:active {
     grid-area:nav;
     display:flex;
     flex-direction: column;
-    gap: 1rem;
     list-style-type:none;
     padding-left: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 2.1rem;
+    
+    background-image: url(../assets/img/black-vertical-chainsjpg.png),url(../assets/img/black-vertical-chainsjpg.png);
+    background-repeat: repeat-y;
+    background-position: 3rem, 5rem;
+    background-size: 12px;
+    margin-block-start: 0;
+
+
 }
+
+.nav-list li{
+    margin-top: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width:7rem;
+    background-image: url(../assets/img/W-Btn-Borderless.png);
+    background-size:7rem 3rem;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.nav-list li::after{
+    opacity: 0;
+    content:"";
+    position:absolute;
+    bottom:0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/img/candle.gif);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: 2.8rem 2rem;
+    backdrop-filter: sepia(90%);
+    transition: all 0.3s ease;    
+}
+
+.nav-list li:hover::after{
+    opacity: 1;
+    transition: all 0.3s ease;    
+
+
+}
+
+.nav-list li a{
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 11;
+}
+
+
 
 
 
 .toggle{
     transition: 0.4s ease-in;
-    height:15.5rem!important;
+    height:20rem!important;
 }
 
 
@@ -182,7 +263,6 @@ a, a:visited, a:hover, a:active {
     row-gap: 1rem;
 }
 main>*{
-    border: 1px solid blue;
     width: 100%;
     min-height: 10rem;;
     text-align: center;
@@ -191,9 +271,9 @@ main>*{
 /* MINIATURAS */
 .minuaturas{
   grid-area:minis;
-  
-
 }
+
+
 .listaMinis{
     display:flex;
     flex-direction: column;
@@ -374,6 +454,8 @@ main>*{
 /* NOTICIAS      */
 .noticias, .reviews, .opinion{
     grid-area: noticias;  
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 
@@ -393,7 +475,13 @@ main>*{
 
 
 .encabezado{
-    height: 3rem;
+    backdrop-filter: blur(4px);
+    background-color: rgba(0,0,0,0.6);
+    color:white;
+    padding: 2rem 0;
+    margin:0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .card{
@@ -667,7 +755,11 @@ scrollbar-width: none;  /* Firefox */
     margin-top: auto;
     margin-bottom: 1rem;
     display:flex;
+    align-items: center;
     flex-direction: column;
+    background-image: url(../assets/img/W-Btn-Borderfull.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .footer>*{
@@ -676,10 +768,10 @@ scrollbar-width: none;  /* Firefox */
 
 .rs{
     display: grid;
-    grid-template-columns: repeat(3, 1fr) ;
+    grid-template-columns: repeat(3, minmax(2rem,10rem)) ;
     justify-items:center;
-    row-gap: 1rem;
-    padding-top: 1rem;
+    row-gap: 2rem;
+    padding-top: 2rem;
 }
 .rs i{
     margin: 5px 0;
@@ -688,19 +780,24 @@ scrollbar-width: none;  /* Firefox */
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1rem auto;
+    margin: 1.5rem auto;
 
     
 }
 .notes>*{
     font-family: 'Eczar';
-    font-weight: 500;
+    font-weight: bold;
 
 }
 .links{
     display:inline-flex;
+    gap: 2rem;
     justify-content:space-evenly;
-
+    padding-bottom: 3rem;
+}
+.links a{
+    text-decoration: none;
+    font-weight: bold;
 }
 
 
@@ -751,6 +848,7 @@ scrollbar-width: none;  /* Firefox */
     .nav-list{
         list-style-type:none;
         display:block;
+        background-image:none;
     }
     .nav-list li{
         display:inline;
@@ -802,6 +900,14 @@ scrollbar-width: none;  /* Firefox */
         font-size: 0.7rem;
     }
 
+    .nav-list{
+        padding-top: 1rem;
+    }
+    .nav-list li{
+
+        background-image: none;
+    }
+
 
   
     .twitter-timeline{
@@ -819,9 +925,24 @@ scrollbar-width: none;  /* Firefox */
     .rs{
         column-gap: 1rem;
     }
+
+    .rs{
+        display: grid;
+        grid-template-columns: repeat(2, 3rem) ;
+        justify-items:center;
+        row-gap: 2rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 1.5rem;
+
+    }
+
     .links{
         flex-direction: column;
         align-items: flex-end;
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+        padding-right: 1.5rem;
     }
     
     .twitter-timeline{

@@ -47,7 +47,7 @@ fetch(`${fuente}`)
     for(let i=0;i<6;i++){
       document.querySelector(`${clase}`).querySelector(`${subclase}`).innerHTML+=`
       <article class="card">
-        <img class="photo" src="${data[i].foto}">
+        <div><img class="photo" src="${data[i].foto}"></div>
         <div class="titulo">${data[i].titulo}</div>
         <div class="description">${data[i].descripcion}</div>
         <div class="seemore"><a href="${data[i].link}"><p>Ver más</p></a></div>
@@ -141,7 +141,7 @@ function photoCarousel(fuente){
     for(let i=0; i<3; i++){
       document.querySelector(".data-slides").innerHTML+=      
       ` <li class="slide">
-          <img src="${data[i].foto}" ${i==0?"data-active":""} alt="Img1">
+          <img src="${data[i].foto}" ${i==0?"data-active=true":""} alt="Img1">
           <p class="subtitle">${data[i].titulo}</p>
         </li>
       `
@@ -203,10 +203,10 @@ function footer(){
 header();
 
 
-setTimeout(()=>{buttonNext.click()}, 50)
 var myInterval = setInterval(()=>{buttonNext.click()}, 7000)
 
 carousel()
+setTimeout(()=>{buttonNext.click()}, 200)
 var noticiasCarousel = photoCarousel('../assets/json/noticias.json')
 var reviewsCarousel = photoCarousel('../assets/json/reviews.json')
 miniaturas()
