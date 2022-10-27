@@ -32,9 +32,7 @@ h3{
     flex-direction: column;    
 }
 
-.nav-list{
-    padding-top: 2rem;
-}
+
 
 .main_internal>p{
     text-indent: 1rem;;
@@ -189,4 +187,10 @@ select{
 }
 .form-style-1 .required{
 	color:red;
+}
+
+@media (min-width: 868px){
+    .nav-list{
+        padding-top: 2rem;
+    }
 }
