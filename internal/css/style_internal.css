@@ -29,9 +29,11 @@ h3{
     grid-area: main_internal;
     padding: 4rem;
     display:flex;
-    flex-direction: column;
+    flex-direction: column;    
+}
 
-    
+.nav-list{
+    padding-top: 2rem;
 }
 
 .main_internal>p{
